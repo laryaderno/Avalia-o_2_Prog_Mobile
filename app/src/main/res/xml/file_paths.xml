@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!-- getExternalFilesDir(Environment.DIRECTORY_PICTURES): fotos de perfil -->
+    <external-files-path name="fotos" path="Pictures/" />
+    <!-- getCacheDir()/fotos: alternativa temporária -->
+    <cache-path name="cache_fotos" path="fotos/" />
+</paths>

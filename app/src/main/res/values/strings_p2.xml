@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Strings de login/cadastro/menu (Pessoa 2 pode editar à vontade; arquivo separado evita conflito) -->
+<resources>
+    <string name="action_editar_perfil">Editar perfil</string>
+    <string name="action_sair">Sair</string>
+
+    <string name="login_titulo">Entrar</string>
+    <string name="hint_email">E-mail</string>
+    <string name="hint_senha">Senha</string>
+    <string name="hint_nome">Nome</string>
+    <string name="hint_nova_senha">Nova senha (deixe em branco para manter)</string>
+    <string name="btn_entrar">Entrar</string>
+    <string name="btn_cadastrar">Criar conta</string>
+    <string name="btn_salvar">Salvar</string>
+    <string name="btn_tirar_foto">Tirar foto</string>
+
+    <string name="cadastro_titulo">Criar conta</string>
+    <string name="edicao_titulo">Editar perfil</string>
+    <string name="cadastro_sucesso">Conta criada! Faça login.</string>
+    <string name="edicao_sucesso">Perfil atualizado.</string>
+</resources>

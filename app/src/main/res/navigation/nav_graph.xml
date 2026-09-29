@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/LoginFragment">
+
+    <!-- Ações globais usadas pela MainActivity ao mudar a sessão.
+         popUpTo nav_graph limpa a pilha: voltar não retorna ao login/telas antigas. -->
+    <action
+        android:id="@+id/action_global_login"
+        app:destination="@id/LoginFragment"
+        app:popUpTo="@id/nav_graph"
+        app:popUpToInclusive="true" />
+
+    <action
+        android:id="@+id/action_global_first"
+        app:destination="@id/FirstFragment"
+        app:popUpTo="@id/nav_graph"
+        app:popUpToInclusive="true" />
+
+    <!-- Fragmento 1 de 4 (Pessoa 2 cria a classe LoginFragment) -->
+    <fragment
+        android:id="@+id/LoginFragment"
+        android:name="com.example.avaliacao1.LoginFragment"
+        android:label="@string/login_fragment_label" />
+
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.example.avaliacao1.FirstFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first" />
+
+    <fragment
+        android:id="@+id/SecondFragment"
+        android:name="com.example.avaliacao1.SecondFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_second" />
+
+    <fragment
+        android:id="@+id/ThirdFragment"
+        android:name="com.example.avaliacao1.ThirdFragment"
+        android:label="@string/third_fragment_label"
+        tools:layout="@layout/fragment_third" />
+
+</navigation>

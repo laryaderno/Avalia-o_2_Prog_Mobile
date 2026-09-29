@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.avaliacao1.MainActivity">
+
+    <!-- Só aparecem com sessão ativa (MainActivity.onPrepareOptionsMenu) -->
+    <item
+        android:id="@+id/action_editar_perfil"
+        android:orderInCategory="90"
+        android:title="@string/action_editar_perfil"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_sair"
+        android:orderInCategory="95"
+        android:title="@string/action_sair"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+</menu>
