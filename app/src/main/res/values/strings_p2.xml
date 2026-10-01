@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Strings de login/cadastro/menu (Pessoa 2 pode editar à vontade; arquivo separado evita conflito) -->
 <resources>
     <string name="action_editar_perfil">Editar perfil</string>
     <string name="action_sair">Sair</string>
@@ -9,6 +8,7 @@
     <string name="hint_senha">Senha</string>
     <string name="hint_nome">Nome</string>
     <string name="hint_nova_senha">Nova senha (deixe em branco para manter)</string>
+
     <string name="btn_entrar">Entrar</string>
     <string name="btn_cadastrar">Criar conta</string>
     <string name="btn_salvar">Salvar</string>
@@ -18,4 +18,19 @@
     <string name="edicao_titulo">Editar perfil</string>
     <string name="cadastro_sucesso">Conta criada! Faça login.</string>
     <string name="edicao_sucesso">Perfil atualizado.</string>
+
+    <string name="p2_nome_obrigatorio">Informe seu nome.</string>
+    <string name="p2_email_invalido">Digite um e-mail válido.</string>
+    <string name="p2_senha_obrigatoria">Informe sua senha.</string>
+    <string name="p2_senha_minima">Use uma senha com pelo menos %1$d caracteres.</string>
+
+    <string name="p2_camera_indisponivel">Nenhum aplicativo de câmera está disponível neste aparelho.</string>
+    <string name="p2_camera_erro">Não foi possível abrir a câmera. Tente novamente.</string>
+    <string name="p2_foto_erro">Não foi possível carregar a foto. Tire outra foto e tente novamente.</string>
+    <string name="p2_foto_obrigatoria">Tire uma foto para o seu perfil antes de salvar.</string>
+    <string name="p2_permissao_negada">A câmera precisa de permissão. Toque em Tirar foto para tentar novamente ou autorize nas configurações do aplicativo.</string>
+
+    <string name="p2_avatar_usuario">Foto de perfil de %1$s</string>
+    <string name="p2_sessao_encerrada">A sessão foi encerrada. Faça login novamente.</string>
+    <string name="p2_carregando">Carregando</string>
 </resources>
