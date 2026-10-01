@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- TODO (Pessoa 2): capriche no visual. Os IDs abaixo são usados pela CadastroActivity. -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -43,6 +42,8 @@
             android:layout_height="wrap_content"
             android:hint="@string/hint_nome"
             android:importantForAutofill="no"
+            android:singleLine="true"
+            android:imeOptions="actionNext"
             android:inputType="textPersonName" />
 
         <EditText
@@ -51,6 +52,8 @@
             android:layout_height="wrap_content"
             android:hint="@string/hint_email"
             android:importantForAutofill="no"
+            android:singleLine="true"
+            android:imeOptions="actionNext"
             android:inputType="textEmailAddress" />
 
         <EditText
@@ -59,7 +62,18 @@
             android:layout_height="wrap_content"
             android:hint="@string/hint_senha"
             android:importantForAutofill="no"
+            android:singleLine="true"
+            android:imeOptions="actionDone"
             android:inputType="textPassword" />
+
+        <ProgressBar
+            android:id="@+id/progressoCadastro"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:contentDescription="@string/p2_carregando"
+            android:visibility="gone" />
 
         <Button
             android:id="@+id/btnSalvar"
@@ -67,5 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="@string/btn_salvar" />
+
     </LinearLayout>
+
 </ScrollView>

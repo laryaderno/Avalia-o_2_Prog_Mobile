@@ -137,14 +137,6 @@ public class MainActivity extends AppCompatActivity {
                 .start();
     }
 
-    /**
-     * TODO (Pessoa 2): avatar (usuario.foto em byte[] -> Bitmap redondo) e nome na Toolbar.
-     * Chamado a cada mudança de sessão/perfil; usuario == null quando deslogado.
-     */
-    private void atualizarToolbar(Usuario usuario) {
-        // TODO (Pessoa 2)
-    }
-
     private void abrirEdicaoDePerfil() {
         Intent i = new Intent(this, CadastroActivity.class);
         i.putExtra(CadastroActivity.EXTRA_MODO, CadastroActivity.MODO_EDICAO);
@@ -260,4 +252,7 @@ public class MainActivity extends AppCompatActivity {
         return handled || super.onSupportNavigateUp();
     }
 
+    private void atualizarToolbar(Usuario usuario) {
+        ToolbarHelper.atualizar(binding.toolbar, usuario);
+    }
 }
