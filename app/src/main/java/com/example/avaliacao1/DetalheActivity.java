@@ -3,6 +3,7 @@ package com.example.avaliacao1;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
@@ -22,21 +23,36 @@ public class DetalheActivity extends AppCompatActivity {
     private SeekBar seekBar;
     private TextView txtTempo;
 
-    private Handler handler = new Handler();
+    private final Handler handler =
+            new Handler(Looper.getMainLooper());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_detalhe);
 
-        String titulo = getIntent().getStringExtra(EXTRA_TITULO);
-        String descricao = getIntent().getStringExtra(EXTRA_DESCRICAO);
-        int imagem = getIntent().getIntExtra(EXTRA_IMAGEM, 0);
-        int som = getIntent().getIntExtra(EXTRA_SOM, 0);
+        String titulo =
+                getIntent().getStringExtra(EXTRA_TITULO);
 
-        TextView txtTitulo = findViewById(R.id.txtDetalheTitulo);
-        TextView txtDescricao = findViewById(R.id.txtDetalheDescricao);
-        ImageView imgDetalhe = findViewById(R.id.imgDetalhe);
+        String descricao =
+                getIntent().getStringExtra(EXTRA_DESCRICAO);
+
+        int imagem =
+                getIntent().getIntExtra(EXTRA_IMAGEM, 0);
+
+        int som =
+                getIntent().getIntExtra(EXTRA_SOM, 0);
+
+        TextView txtTitulo =
+                findViewById(R.id.txtDetalheTitulo);
+
+        TextView txtDescricao =
+                findViewById(R.id.txtDetalheDescricao);
+
+        ImageView imgDetalhe =
+                findViewById(R.id.imgDetalhe);
 
         btnPlay = findViewById(R.id.btnPlay);
         seekBar = findViewById(R.id.seekBar);
@@ -49,93 +65,104 @@ public class DetalheActivity extends AppCompatActivity {
             imgDetalhe.setImageResource(imagem);
         }
 
-        if (som != 0) {
+        configurarAudio(som);
+    }
 
-            mediaPlayer = MediaPlayer.create(this, som);
+    private void configurarAudio(int som) {
 
-            if (mediaPlayer != null) {
-
-                seekBar.setMax(mediaPlayer.getDuration());
-
-                txtTempo.setText(
-                        "0:00 / " + formatarTempo(mediaPlayer.getDuration())
-                );
-
-                btnPlay.setOnClickListener(v -> {
-
-                    if (mediaPlayer.isPlaying()) {
-
-                        mediaPlayer.pause();
-                        btnPlay.setText("▶");
-
-                    } else {
-
-                        mediaPlayer.start();
-                        btnPlay.setText("II");
-                        atualizarProgresso();
-                    }
-                });
-
-                seekBar.setOnSeekBarChangeListener(
-                        new SeekBar.OnSeekBarChangeListener() {
-
-                            @Override
-                            public void onProgressChanged(
-                                    SeekBar seekBar,
-                                    int progress,
-                                    boolean fromUser
-                            ) {
-                                if (fromUser && mediaPlayer != null) {
-                                    mediaPlayer.seekTo(progress);
-                                }
-                            }
-
-                            @Override
-                            public void onStartTrackingTouch(
-                                    SeekBar seekBar
-                            ) {
-                            }
-
-                            @Override
-                            public void onStopTrackingTouch(
-                                    SeekBar seekBar
-                            ) {
-                            }
-                        }
-                );
-
-                mediaPlayer.setOnCompletionListener(mp -> {
-
-                    seekBar.setProgress(0);
-
-                    txtTempo.setText(
-                            "0:00 / " +
-                                    formatarTempo(mediaPlayer.getDuration())
-                    );
-
-                    btnPlay.setText("▶ Reproduzir");
-                });
-            }
-
-        } else {
-
+        if (som == 0) {
             btnPlay.setEnabled(false);
             btnPlay.setText("Som indisponível");
+            return;
         }
+
+        mediaPlayer = MediaPlayer.create(this, som);
+
+        if (mediaPlayer == null) {
+            btnPlay.setEnabled(false);
+            btnPlay.setText("Som indisponível");
+            return;
+        }
+
+        seekBar.setMax(mediaPlayer.getDuration());
+
+        txtTempo.setText(
+                "0:00 / " +
+                        formatarTempo(mediaPlayer.getDuration())
+        );
+
+        btnPlay.setOnClickListener(v -> {
+
+            if (mediaPlayer.isPlaying()) {
+
+                mediaPlayer.pause();
+                btnPlay.setText("▶");
+
+            } else {
+
+                mediaPlayer.start();
+                btnPlay.setText("II");
+                atualizarProgresso();
+            }
+        });
+
+        seekBar.setOnSeekBarChangeListener(
+                new SeekBar.OnSeekBarChangeListener() {
+
+                    @Override
+                    public void onProgressChanged(
+                            SeekBar seekBar,
+                            int progress,
+                            boolean fromUser) {
+
+                        if (fromUser &&
+                                mediaPlayer != null) {
+
+                            mediaPlayer.seekTo(progress);
+                        }
+                    }
+
+                    @Override
+                    public void onStartTrackingTouch(
+                            SeekBar seekBar) {
+                    }
+
+                    @Override
+                    public void onStopTrackingTouch(
+                            SeekBar seekBar) {
+                    }
+                }
+        );
+
+        mediaPlayer.setOnCompletionListener(mp -> {
+
+            seekBar.setProgress(0);
+
+            txtTempo.setText(
+                    "0:00 / " +
+                            formatarTempo(mediaPlayer.getDuration())
+            );
+
+            btnPlay.setText("▶ Reproduzir");
+        });
     }
 
     private void atualizarProgresso() {
 
-        if (mediaPlayer != null && mediaPlayer.isPlaying()) {
+        if (mediaPlayer != null &&
+                mediaPlayer.isPlaying()) {
 
-            int progresso = mediaPlayer.getCurrentPosition();
+            int progresso =
+                    mediaPlayer.getCurrentPosition();
 
             seekBar.setProgress(progresso);
 
             txtTempo.setText(
                     formatarTempo(progresso)
                             + " / "
-                            + formatarTempo(mediaPlayer.getDuration())
+                            + formatarTempo(
+                            mediaPlayer.getDuration()
+                    )
             );
 
             handler.postDelayed(
@@ -148,7 +175,6 @@ public class DetalheActivity extends AppCompatActivity {
     private String formatarTempo(int milissegundos) {
 
         int segundos = milissegundos / 1000;
-
         int minutos = segundos / 60;
 
         segundos = segundos % 60;

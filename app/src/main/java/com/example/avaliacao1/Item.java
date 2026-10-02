@@ -41,5 +41,7 @@ public class Item {
     public int getId() { return id; }
     public int getBiomaId() { return biomaId; }
     @NonNull public String getNome() { return nome; }
+
+    @Override public String toString() { return nome; }
     public String getCaminhoImagem() { return caminhoImagem; }
 }
