@@ -71,14 +71,7 @@
         para a regulação ambiental e para o transporte local. A sua vegetação divide-se entre matas de igapó, várzea e terra firme,
         desempenhando um papel crucial no ciclo hidrológico continental por meio da evapotranspiração, processo responsável pela
         criação dos chamados rios voadores, que distribuem umidade e chuvas para o Centro-Oeste, Sul e Sudeste do país, além de
-        influenciarem o clima global e estocarem bilhões de toneladas de carbono. \n
-        Politicamente, o governo brasileiro instituiu a
-        Amazônia Legal para promover o desenvolvimento sustentável e proteger os nove estados que compõem a região. Contudo, esse
-        ecossistema enfrenta severas ameaças devido à ação humana, como o desmatamento, queimadas, garimpo ilegal, grilagem de
-        terras e avanço da agropecuária, fatores que aceleram a degradação florestal. Especialistas alertam que a perda de mais de
-        20% da cobertura original pode levar a floresta a um ponto de não retorno, correndo o risco de se transformar em savana nas
-        próximas décadas. Para conter o colapso e manter a floresta em pé, faz-se urgente fortalecer as políticas ambientais,
-        intensificar a fiscalização, incentivar a bioeconomia e expandir as Unidades de Conservação.</string>
+        influenciarem o clima global e estocarem bilhões de toneladas de carbono.</string>
 
     <string name="bioma_caatinga">Caatinga</string>
     <string name="desc_caatinga">A Caatinga é o único bioma exclusivamente brasileiro, ocupando cerca de 11% do território nacional e
@@ -87,15 +80,7 @@
         caracterizado por temperaturas elevadas, baixa umidade e períodos prolongados de estiagem. Sua vegetação xerófila (composta
         por cactos como o mandacaru e o xiquexique, arbustos espinhosos e árvores de pequeno porte) desenvolveu estratégias
         ecológicas fascinantes para sobreviver à escassez de água, como a perda sazonal das folhas durante a seca e o armazenamento
-        de líquido em seus tecidos. Quando as chuvas chegam, a paisagem cinzenta se transforma rapidamente em um tapete verde vibrante. \n
-        Além da flora resiliente, o bioma abriga espécies animais emblemáticas, a exemplo da ararinha-azul, da cascavel e do tatu-bola.
-        Os recursos hídricos da região dependem fortemente de rios temporários, com exceção de grandes bacias perenes como a do
-        Rio São Francisco, que desempenha um papel vital no abastecimento, na agricultura irrigada e na geração de energia.
-        Apesar de sua enorme relevância socioambiental e da presença de milhões de pessoas que dela retiram seu sustento, a
-        Caatinga enfrenta sérias ameaças decorrentes do desmatamento para extração de lenha, da agropecuária predatória e das
-        queimadas. Essa degradação contínua acelera processos de desertificação em áreas vulneráveis, tornando urgente a
-        ampliação de unidades de conservação, a restauração florestal e o incentivo a práticas de convivência sustentável com
-        o semiárido.</string>
+        de líquido em seus tecidos. Quando as chuvas chegam, a paisagem cinzenta se transforma rapidamente em um tapete verde vibrante.</string>
 
     <string name="bioma_cerrado">Cerrado</string>
     <string name="desc_cerrado">O Cerrado é o segundo maior bioma do Brasil, cobrindo cerca de 20% do território nacional,
